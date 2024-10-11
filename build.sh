@@ -18,5 +18,5 @@ echo "compiler: $compiler"
 
 mkdir -p $build_folder
 pushd $build_folder
-$compiler $src_folder/main.cpp -o main
+$compiler -DASSERT_ENABLED=0 $src_folder/main.cpp -o main
 popd
