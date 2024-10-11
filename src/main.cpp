@@ -28,7 +28,7 @@ int main(int Argc, char **Argv)
     printf("items has %lu items\n", ArrayCount(items));
 
     Assert(1 + 1 == 2);
-    Assert(1 + 1 == 4);
+    Assert(0 + 1 == 4);
 
     return 0;
 }

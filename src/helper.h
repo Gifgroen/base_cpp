@@ -5,12 +5,18 @@
 #define ArrayCount(A) (sizeof(A) / sizeof((A)[0]))
 
 // Assertion helper
-#define Statement(S) do { S } while(false);
+#define Statement(S) do { S } while(false)
 
-#define AssertBreak() __builtin_trap();
+#if !defined(AssertBreak)
+#  if OS_WINDOWS
+#    define AssertBreak() (__debugbreak())
+#  else
+#    define AssertBreak() (__builtin_trap())
+# endif
+#endif
 
 #if ASSERT_ENABLED
-#define Assert(C) if (!(C)) { Statement(AssertBreak()) }
+#define Assert(C) Statement(if (!(C)) { AssertBreak(); })
 #else
 #define Assert(C)
 #endif
