@@ -1,7 +1,8 @@
-#include <stdio.h>
-
 #include "base.h"
 #include "helper.h"
+#include "types.h"
+
+#include <stdio.h>
 
 int main(int Argc, char **Argv) 
 {
@@ -24,7 +25,7 @@ int main(int Argc, char **Argv)
     printf("ARCH_x86 = %d\n", ARCH_x86);
     printf("ARCH_x64 = %d\n", ARCH_x64);
 
-    int items[3] = {1, 2, 0};
+    s8 items[3] = {1, 2, 0};
     printf("items has %lu items\n", ArrayCount(items));
 
     Assert(1 + 1 == 2);
