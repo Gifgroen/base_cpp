@@ -16,8 +16,11 @@ function print_current_bld_env
 
 function bld_compile 
 {
+    local in_file=$1
+    local out_file=$2
+    local flags=$3
+
     pushd $build_dir
-    local flags="-DASSERT_ENABLED=1"
-    $compiler $flags $1 -o $2 
+    $compiler $in_file -o $out_file $flags
     popd
 }

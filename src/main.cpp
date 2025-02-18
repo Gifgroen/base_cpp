@@ -8,7 +8,6 @@ int main(int Argc, char **Argv)
 {
     printf("Hello world!\n");
 
-    printf("\n=== context ===\n");
     printf("\n= compiler =\n");
     printf("CL = %d\n", COMPILER_CL);
     printf("CLANG = %d\n", COMPILER_CLANG);
